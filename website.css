@@ -1992,36 +1992,3 @@ body::after {
     font-size: 13px;
   }
 }
-
-/* ============================================================
-   TEXTMOB ICON — FACEBOOK-STYLE ROUNDED DESIGN
-   ============================================================ */
-.icon-text {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.6em;
-  height: 1.6em;
-  min-width: 1.6em;
-  min-height: 1.6em;
-  font-size: 0.8em;
-  font-weight: 900;
-  background: var(--c-accent) !important;
-  color: white !important;
-  border-radius: 0.28em;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-  letter-spacing: -0.08em;
-  line-height: 1.2;
-  flex-shrink: 0;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  text-decoration: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Hover effects for contact and footer icons */
-.contact-link:hover .icon-text,
-.footer-socials a:hover .icon-text {
-  transform: scale(1.15);
-  box-shadow: 0 0 18px var(--c-accent-glow);
-}
