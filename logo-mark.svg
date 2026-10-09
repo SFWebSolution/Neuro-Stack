@@ -2,22 +2,41 @@
   <defs>
     <linearGradient id="nvGrad" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#00D4FF"/>
-      <stop offset="0.55" stop-color="#5B8CFF"/>
+      <stop offset="0.5" stop-color="#4C7BFF"/>
       <stop offset="1" stop-color="#7B4DFF"/>
     </linearGradient>
     <linearGradient id="nvShine" x1="0" y1="0" x2="0" y2="512" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
-      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.30"/>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
   </defs>
-  <rect x="12" y="12" width="488" height="488" rx="120" fill="url(#nvGrad)"/>
-  <rect x="12" y="12" width="488" height="488" rx="120" fill="url(#nvShine)"/>
-  <rect x="12" y="12" width="488" height="488" rx="120" fill="none" stroke="#ffffff" stroke-opacity="0.28" stroke-width="7"/>
-  <g fill="#ffffff">
-    <polygon points="136,376 184,376 184,184 136,184"/>
-    <polygon points="328,376 376,376 376,184 328,184"/>
-    <polygon points="136,184 184,184 376,376 328,376"/>
+
+  <!-- Badge -->
+  <rect x="12" y="12" width="488" height="488" rx="118" fill="url(#nvGrad)"/>
+  <rect x="12" y="12" width="488" height="488" rx="118" fill="url(#nvShine)"/>
+  <rect x="12" y="12" width="488" height="488" rx="118" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="7"/>
+
+  <!-- Stacked isometric layers (the "Stack") -->
+  <g stroke="#ffffff" stroke-linejoin="round">
+    <path d="M256 258 L386 320 L256 382 L126 320 Z" fill="#ffffff" fill-opacity="0.34" stroke-opacity="0.22" stroke-width="3"/>
+    <path d="M256 188 L386 250 L256 312 L126 250 Z" fill="#ffffff" fill-opacity="0.60" stroke-opacity="0.22" stroke-width="3"/>
+    <path d="M256 118 L386 180 L256 242 L126 180 Z" fill="#ffffff" fill-opacity="0.96" stroke-opacity="0.85" stroke-width="6"/>
   </g>
-  <path d="M400 104 L413.6 146.4 L456 160 L413.6 173.6 L400 216 L386.4 173.6 L344 160 L386.4 146.4 Z" fill="#FFC24B"/>
+
+  <!-- Neural network (the "Neuro") on the top layer -->
+  <g stroke="#0E2A5A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
+    <path d="M256 146 L322 178"/>
+    <path d="M322 178 L256 210"/>
+    <path d="M256 210 L190 178"/>
+    <path d="M190 178 L256 146"/>
+  </g>
+  <g fill="#0E2A5A">
+    <circle cx="256" cy="146" r="12"/>
+    <circle cx="322" cy="178" r="12"/>
+    <circle cx="256" cy="210" r="12"/>
+    <circle cx="190" cy="178" r="12"/>
+  </g>
+  <circle cx="256" cy="178" r="11" fill="#FFC24B"/>
 </svg>
+
 
