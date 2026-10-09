@@ -985,19 +985,11 @@ body::after {
 }
 
 .board-seal-mark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  font-family: var(--ff-heading);
-  font-size: 16px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  color: var(--c-white);
-  background: linear-gradient(135deg, var(--c-accent), var(--c-accent2));
-  box-shadow: 0 0 24px var(--c-accent-dim);
+  display: block;
+  width: 52px;
+  height: 52px;
+  border-radius: 26%;
+  box-shadow: 0 0 26px var(--c-accent-dim);
 }
 
 .board-seal-label {
@@ -1752,7 +1744,6 @@ body::after {
   .board-seal-mark {
     width: 40px;
     height: 40px;
-    font-size: 14px;
   }
 
   .team-grid {
@@ -2061,7 +2052,6 @@ body::after {
   .board-seal-mark {
     width: 36px;
     height: 36px;
-    font-size: 13px;
   }
 
   .board-seal-label {

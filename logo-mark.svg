@@ -6,7 +6,7 @@
       <stop offset="1" stop-color="#7B4DFF"/>
     </linearGradient>
     <linearGradient id="nvShine" x1="0" y1="0" x2="0" y2="512" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#ffffff" stop-opacity="0.28"/>
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.26"/>
       <stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
   </defs>
@@ -14,24 +14,25 @@
   <!-- Badge -->
   <rect x="12" y="12" width="488" height="488" rx="116" fill="url(#nvGrad)"/>
   <rect x="12" y="12" width="488" height="488" rx="116" fill="url(#nvShine)"/>
-  <rect x="12" y="12" width="488" height="488" rx="116" fill="none" stroke="#ffffff" stroke-opacity="0.24" stroke-width="7"/>
+  <rect x="12" y="12" width="488" height="488" rx="116" fill="none" stroke="#ffffff" stroke-opacity="0.22" stroke-width="7"/>
 
-  <!-- Stack: three isometric layers, bottom to top -->
-  <path d="M256 248 L432 336 L256 424 L80 336 Z" fill="#ffffff" fill-opacity="0.30" stroke="#ffffff" stroke-opacity="0.18" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M256 184 L432 272 L256 360 L80 272 Z" fill="#ffffff" fill-opacity="0.58" stroke="#ffffff" stroke-opacity="0.18" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M256 120 L432 208 L256 296 L80 208 Z" fill="#ffffff" fill-opacity="0.97" stroke="#ffffff" stroke-opacity="0.85" stroke-width="6" stroke-linejoin="round"/>
+  <!-- Stack: three isometric layers -->
+  <path d="M256 240 L408 316 L256 392 L104 316 Z" fill="#ffffff" fill-opacity="0.30"/>
+  <path d="M256 172 L408 248 L256 324 L104 248 Z" fill="#ffffff" fill-opacity="0.58"/>
+  <path d="M256 104 L408 180 L256 256 L104 180 Z" fill="#ffffff" fill-opacity="0.97"/>
 
-  <!-- Neuro: node cluster on the top layer -->
-  <g stroke="#0E2A5A" stroke-width="16" stroke-linecap="round">
-    <path d="M256 208 L256 148"/>
-    <path d="M256 208 L344 208"/>
-    <path d="M256 208 L168 208"/>
+  <!-- Neuro: node cluster anchored on the top layer -->
+  <g stroke="#0E2A5A" stroke-width="13" stroke-linecap="round">
+    <path d="M256 196 L256 148"/>
+    <path d="M256 196 L322 222"/>
+    <path d="M256 196 L190 222"/>
   </g>
-  <circle cx="256" cy="148" r="17" fill="#0E2A5A"/>
-  <circle cx="344" cy="208" r="17" fill="#0E2A5A"/>
-  <circle cx="168" cy="208" r="17" fill="#0E2A5A"/>
-  <circle cx="256" cy="208" r="20" fill="#FFC24B"/>
+  <circle cx="256" cy="148" r="16" fill="#0E2A5A"/>
+  <circle cx="322" cy="222" r="16" fill="#0E2A5A"/>
+  <circle cx="190" cy="222" r="16" fill="#0E2A5A"/>
+  <circle cx="256" cy="196" r="21" fill="#FFC24B"/>
 </svg>
+
 
 
 
