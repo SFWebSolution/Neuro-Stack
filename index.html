@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,7 @@
   <meta property="og:title" content="NeuroStack — Digital Solutions & Innovation">
   <meta property="og:description" content="Premium web development, graphic design, app development, and digital marketing that help your business stand out and scale globally.">
   <meta property="og:image" content="logo-mark-512.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="NeuroStack — Digital Solutions & Innovation">
-  <meta name="twitter:description" content="Premium web development, graphic design, app development, and digital marketing that help your business stand out and scale globally.">
-  <meta name="twitter:image" content="logo-mark-512.png">
+  <meta property="og:site_name" content="NeuroStack">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate icon" type="image/png" href="logo-mark-192.png">
@@ -276,6 +273,9 @@
           <a href="mailto:neuro-stack@outlook.com" class="contact-link">
             <i class="fas fa-envelope"></i> Email Us
           </a>
+          <a href="https://textmob.web.app/@neurostack" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <i class="fas fa-comment-dots"></i> TextMob
+          </a>
         </div>
       </div>
     </div>
@@ -294,12 +294,16 @@
       <div class="footer-socials">
         <a href="https://wa.me/2349032686210" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         <a href="mailto:neuro-stack@outlook.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://textmob.web.app/@neurostack" target="_blank" rel="noopener noreferrer" aria-label="TextMob"><i class="fas fa-comment-dots"></i></a>
       </div>
     </div>
   </footer>
 
   <!-- ============ SCRIPTS ============ -->
   <script>
+    // Enable JS-dependent styles
+    document.documentElement.classList.remove('no-js');
+
     // ---- Navbar scroll effect ----
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
@@ -325,22 +329,28 @@
 
     // ---- Scroll reveal ----
     const revealElements = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.15 });
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.15 });
 
-    revealElements.forEach(el => revealObserver.observe(el));
+      revealElements.forEach(el => revealObserver.observe(el));
+    } else {
+      revealElements.forEach(el => el.classList.add('visible'));
+    }
 
     // ---- Smooth scroll for anchor links ----
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const id = this.getAttribute('href');
+        if (id.length < 2) return;
+        const target = document.querySelector(id);
         if (target) {
+          e.preventDefault();
           target.scrollIntoView({ behavior: 'smooth' });
         }
       });
