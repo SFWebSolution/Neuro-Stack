@@ -1,5 +1,5 @@
 /* ============================================================
-   NOVASTACK — COMPANY WEBSITE STYLESHEET
+   NEUROSTACK — COMPANY WEBSITE STYLESHEET
    Premium dark theme with glassmorphism + cyber accents
    ============================================================ */
 
@@ -188,6 +188,22 @@ body::after {
   font-weight: 700;
   color: var(--c-white);
   letter-spacing: 0.5px;
+}
+
+.nav-brand .brand-tech,
+.footer-brand .brand-tech {
+  margin-left: 0.32em;
+  font-size: 0.48em;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  padding: 0.16em 0.42em;
+  border: 1px solid var(--c-accent-dim);
+  border-radius: 0.35em;
+  background: var(--c-accent-dim);
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
 .nav-links {
