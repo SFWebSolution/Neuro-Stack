@@ -1,22 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="NeuroStack">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Novastack">
   <defs>
-    <linearGradient id="nsGrad" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#00BFFF"/>
-      <stop offset="1" stop-color="#6C63FF"/>
+    <linearGradient id="nvGrad" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00D4FF"/>
+      <stop offset="0.55" stop-color="#5B8CFF"/>
+      <stop offset="1" stop-color="#7B4DFF"/>
+    </linearGradient>
+    <linearGradient id="nvShine" x1="0" y1="0" x2="0" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
   </defs>
-  <rect x="16" y="16" width="480" height="480" rx="128" fill="url(#nsGrad)"/>
-  <rect x="16" y="16" width="480" height="480" rx="128" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="8"/>
-  <g stroke="#ffffff" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <path d="M168 376V136"/>
-    <path d="M344 376V136"/>
-    <path d="M168 136L344 376"/>
-  </g>
+  <rect x="12" y="12" width="488" height="488" rx="120" fill="url(#nvGrad)"/>
+  <rect x="12" y="12" width="488" height="488" rx="120" fill="url(#nvShine)"/>
+  <rect x="12" y="12" width="488" height="488" rx="120" fill="none" stroke="#ffffff" stroke-opacity="0.28" stroke-width="7"/>
   <g fill="#ffffff">
-    <circle cx="168" cy="136" r="30"/>
-    <circle cx="168" cy="376" r="30"/>
-    <circle cx="344" cy="136" r="30"/>
-    <circle cx="344" cy="376" r="30"/>
-    <circle cx="256" cy="256" r="26"/>
+    <polygon points="136,376 184,376 184,184 136,184"/>
+    <polygon points="328,376 376,376 376,184 328,184"/>
+    <polygon points="136,184 184,184 376,376 328,376"/>
   </g>
+  <path d="M400 104 L413.6 146.4 L456 160 L413.6 173.6 L400 216 L386.4 173.6 L344 160 L386.4 146.4 Z" fill="#FFC24B"/>
 </svg>
+
