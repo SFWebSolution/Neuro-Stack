@@ -2,22 +2,40 @@
   <defs>
     <linearGradient id="nvGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#00D4FF"/>
-      <stop offset="0.55" stop-color="#5B8CFF"/>
+      <stop offset="0.5" stop-color="#4C7BFF"/>
       <stop offset="1" stop-color="#7B4DFF"/>
     </linearGradient>
     <linearGradient id="nvShine" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
-      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.30"/>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
   </defs>
+
   <rect x="1.5" y="1.5" width="61" height="61" rx="15" fill="url(#nvGrad)"/>
   <rect x="1.5" y="1.5" width="61" height="61" rx="15" fill="url(#nvShine)"/>
-  <rect x="1.5" y="1.5" width="61" height="61" rx="15" fill="none" stroke="#ffffff" stroke-opacity="0.28" stroke-width="1.4"/>
-  <g fill="#ffffff">
-    <polygon points="17,47 23,47 23,23 17,23"/>
-    <polygon points="41,47 47,47 47,23 41,23"/>
-    <polygon points="17,23 23,23 47,47 41,47"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="15" fill="none" stroke="#ffffff" stroke-opacity="0.26" stroke-width="1.4"/>
+
+  <!-- Stacked layers -->
+  <g stroke="#ffffff" stroke-opacity="0.9" stroke-width="1.1" stroke-linejoin="round">
+    <path d="M32 33 L48 41 L32 49 L16 41 Z" fill="#ffffff" fill-opacity="0.40"/>
+    <path d="M32 25 L48 33 L32 41 L16 33 Z" fill="#ffffff" fill-opacity="0.64"/>
+    <path d="M32 17 L48 25 L32 33 L16 25 Z" fill="#ffffff" fill-opacity="0.95"/>
   </g>
-  <path d="M50 13 L51.7 18.3 L57 20 L51.7 21.7 L50 27 L48.3 21.7 L43 20 L48.3 18.3 Z" fill="#FFC24B"/>
+
+  <!-- Neural network on the top layer -->
+  <g stroke="#0E2A5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
+    <path d="M32 20.5 L39.5 24.5"/>
+    <path d="M39.5 24.5 L32 28.5"/>
+    <path d="M32 28.5 L24.5 24.5"/>
+    <path d="M24.5 24.5 L32 20.5"/>
+  </g>
+  <g fill="#0E2A5A">
+    <circle cx="32" cy="20.5" r="2.7"/>
+    <circle cx="39.5" cy="24.5" r="2.7"/>
+    <circle cx="32" cy="28.5" r="2.7"/>
+    <circle cx="24.5" cy="24.5" r="2.7"/>
+  </g>
+  <circle cx="32" cy="24.5" r="2.5" fill="#FFC24B"/>
 </svg>
+
 
