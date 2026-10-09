@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="NeuroStack">
+  <defs>
+    <linearGradient id="nsGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00BFFF"/>
+      <stop offset="1" stop-color="#6C63FF"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#nsGrad)"/>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+  <g stroke="#ffffff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95">
+    <path d="M21 47V17"/>
+    <path d="M43 47V17"/>
+    <path d="M21 17L43 47"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="21" cy="17" r="4"/>
+    <circle cx="21" cy="47" r="4"/>
+    <circle cx="43" cy="17" r="4"/>
+    <circle cx="43" cy="47" r="4"/>
+    <circle cx="32" cy="32" r="3.4"/>
+  </g>
+</svg>
