@@ -16,21 +16,22 @@
   <rect x="1.5" y="1.5" width="61" height="61" rx="15" fill="none" stroke="#ffffff" stroke-opacity="0.24" stroke-width="1.2"/>
 
   <!-- Stack -->
-  <path d="M32 31 L54 42 L32 53 L10 42 Z" fill="#ffffff" fill-opacity="0.30" stroke="#ffffff" stroke-opacity="0.18" stroke-width="0.8" stroke-linejoin="round"/>
-  <path d="M32 23 L54 34 L32 45 L10 34 Z" fill="#ffffff" fill-opacity="0.58" stroke="#ffffff" stroke-opacity="0.18" stroke-width="0.8" stroke-linejoin="round"/>
-  <path d="M32 15 L54 26 L32 37 L10 26 Z" fill="#ffffff" fill-opacity="0.97" stroke="#ffffff" stroke-opacity="0.85" stroke-width="1.1" stroke-linejoin="round"/>
+  <path d="M32 30 L51 39.5 L32 49 L13 39.5 Z" fill="#ffffff" fill-opacity="0.30"/>
+  <path d="M32 21.5 L51 31 L32 40.5 L13 31 Z" fill="#ffffff" fill-opacity="0.58"/>
+  <path d="M32 13 L51 22.5 L32 32 L13 22.5 Z" fill="#ffffff" fill-opacity="0.97"/>
 
   <!-- Neuro node cluster -->
-  <g stroke="#0E2A5A" stroke-width="2.6" stroke-linecap="round">
-    <path d="M32 26 L32 18.5"/>
-    <path d="M32 26 L43 26"/>
-    <path d="M32 26 L21 26"/>
+  <g stroke="#0E2A5A" stroke-width="1.9" stroke-linecap="round">
+    <path d="M32 24.5 L32 18.5"/>
+    <path d="M32 24.5 L40.3 27.8"/>
+    <path d="M32 24.5 L23.7 27.8"/>
   </g>
-  <circle cx="32" cy="18.5" r="2.8" fill="#0E2A5A"/>
-  <circle cx="43" cy="26" r="2.8" fill="#0E2A5A"/>
-  <circle cx="21" cy="26" r="2.8" fill="#0E2A5A"/>
-  <circle cx="32" cy="26" r="3.3" fill="#FFC24B"/>
+  <circle cx="32" cy="18.5" r="2.3" fill="#0E2A5A"/>
+  <circle cx="40.3" cy="27.8" r="2.3" fill="#0E2A5A"/>
+  <circle cx="23.7" cy="27.8" r="2.3" fill="#0E2A5A"/>
+  <circle cx="32" cy="24.5" r="3" fill="#FFC24B"/>
 </svg>
+
 
 
 
