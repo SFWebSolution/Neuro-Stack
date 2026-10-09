@@ -1,12 +1,12 @@
 /* ============================================================
    NEUROSTACK — COMPANY WEBSITE STYLESHEET
-   Premium dark theme with glassmorphism + cyber-blue accents
+   Premium dark theme with glassmorphism + cyber accents
    ============================================================ */
 
 /* -------------------------
    GOOGLE FONTS
 ------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 /* -------------------------
    DESIGN TOKENS
@@ -19,16 +19,17 @@
   --c-surface-lit: rgba(255, 255, 255, 0.04);
   --c-glass:       rgba(255, 255, 255, 0.06);
   --c-glass-border:rgba(255, 255, 255, 0.08);
-  --c-accent:      #00BFFF;
-  --c-accent-dim:  rgba(0, 191, 255, 0.15);
-  --c-accent-glow: rgba(0, 191, 255, 0.35);
-  --c-accent2:     #6C63FF;
+  --c-accent:      #00D4FF;
+  --c-accent-dim:  rgba(0, 212, 255, 0.15);
+  --c-accent-glow: rgba(0, 212, 255, 0.35);
+  --c-accent2:     #7B4DFF;
+  --c-gold:        #FFC24B;
   --c-text:        #e4eaf6;
   --c-text-dim:    #8a94a8;
   --c-white:       #ffffff;
 
   /* Typography */
-  --ff-heading: 'Outfit', sans-serif;
+  --ff-heading: 'Space Grotesk', sans-serif;
   --ff-body:    'Inter', sans-serif;
 
   /* Spacing */
@@ -123,8 +124,8 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 50% at 20% 20%, rgba(0,191,255,0.06), transparent),
-    radial-gradient(ellipse 50% 40% at 80% 80%, rgba(108,99,255,0.05), transparent);
+    radial-gradient(ellipse 60% 50% at 20% 20%, rgba(0,212,255,0.06), transparent),
+    radial-gradient(ellipse 50% 40% at 80% 80%, rgba(123,77,255,0.05), transparent);
   z-index: -2;
   pointer-events: none;
 }
@@ -175,9 +176,9 @@ body::after {
 }
 
 .nav-brand img {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  border-radius: 26%;
   border: 2px solid var(--c-accent-dim);
 }
 
@@ -187,6 +188,22 @@ body::after {
   font-weight: 700;
   color: var(--c-white);
   letter-spacing: 0.5px;
+}
+
+.nav-brand .brand-tech,
+.footer-brand .brand-tech {
+  margin-left: 0.32em;
+  font-size: 0.48em;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  padding: 0.16em 0.42em;
+  border: 1px solid var(--c-accent-dim);
+  border-radius: 0.35em;
+  background: var(--c-accent-dim);
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
 .nav-links {
@@ -336,7 +353,7 @@ body::after {
   left: -5%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(108,99,255,0.1), transparent 70%);
+  background: radial-gradient(circle, rgba(123,77,255,0.1), transparent 70%);
   border-radius: 50%;
   pointer-events: none;
   animation: pulseOrb 8s ease-in-out infinite alternate-reverse;
@@ -467,29 +484,67 @@ body::after {
   animation: fadeSlideUp 1s 0.5s ease-out both;
 }
 
-.hero-logo-wrapper {
+.hero-mark-card {
   position: relative;
-  width: 380px;
-  height: 380px;
-}
-
-.hero-logo-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 24px;
+  width: 340px;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 32px;
+  background:
+    radial-gradient(120% 120% at 30% 20%, rgba(0,212,255,0.14), transparent 60%),
+    radial-gradient(120% 120% at 80% 90%, rgba(123,77,255,0.16), transparent 55%),
+    var(--c-glass);
   border: 1px solid var(--c-glass-border);
-  box-shadow: 0 0 60px var(--c-accent-dim), 0 0 120px rgba(0,191,255,0.08);
+  box-shadow: 0 0 60px var(--c-accent-dim), 0 0 140px rgba(123,77,255,0.12);
+  backdrop-filter: blur(8px);
 }
 
-/* Rotating ring around logo */
-.hero-logo-wrapper::before {
+.hero-mark-card img {
+  width: 62%;
+  height: 62%;
+  object-fit: contain;
+  border-radius: 22px;
+  filter: drop-shadow(0 12px 32px rgba(0,212,255,0.35));
+}
+
+/* Rotating dashed ring around the mark card */
+.hero-mark-card::before {
   content: '';
   position: absolute;
-  inset: -20px;
+  inset: -22px;
   border: 2px dashed var(--c-accent-dim);
-  border-radius: 32px;
+  border-radius: 40px;
   animation: spinSlow 30s linear infinite;
+  pointer-events: none;
+}
+
+/* Floating capability chips */
+.hero-chip {
+  position: absolute;
+  padding: 8px 16px;
+  font-family: var(--ff-heading);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--c-white);
+  background: var(--c-surface);
+  border: 1px solid var(--c-glass-border);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  animation: chipFloat 6s ease-in-out infinite;
+}
+
+.hero-chip-1 { top: 4%;  left: -8%;  color: var(--c-accent); animation-delay: 0s; }
+.hero-chip-2 { top: 16%; right: -16%; color: var(--c-accent2); animation-delay: 0.8s; }
+.hero-chip-3 { bottom: 16%; left: -12%; animation-delay: 1.6s; }
+.hero-chip-4 { bottom: 3%; right: -6%;  color: var(--c-gold); animation-delay: 2.4s; }
+
+@keyframes chipFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
 }
 
 @keyframes spinSlow {
@@ -577,6 +632,40 @@ body::after {
   color: var(--c-text);
 }
 
+.about-highlights {
+  display: grid;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.about-highlight {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 16px 20px;
+  background: var(--c-surface-lit);
+  border-left: 3px solid var(--c-accent);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.about-highlight:hover {
+  background: var(--c-accent-dim);
+  transform: translateX(4px);
+}
+
+.about-highlight strong {
+  font-family: var(--ff-heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--c-white);
+}
+
+.about-highlight span {
+  font-size: 13.5px;
+  color: var(--c-text-dim);
+}
+
 /* ============================================================
    SERVICES
    ============================================================ */
@@ -630,7 +719,7 @@ body::after {
 .service-card:hover {
   border-color: var(--c-accent-dim);
   transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(0,191,255,0.1);
+  box-shadow: 0 12px 40px rgba(0,212,255,0.1);
 }
 
 .service-icon {
@@ -722,7 +811,7 @@ body::after {
 .product-card:hover {
   border-color: var(--c-accent-dim);
   transform: translateY(-8px);
-  box-shadow: 0 16px 48px rgba(0,191,255,0.15);
+  box-shadow: 0 16px 48px rgba(0,212,255,0.15);
 }
 
 .product-logo {
@@ -731,7 +820,7 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--c-accent-dim), rgba(108,99,255,0.1));
+  background: linear-gradient(135deg, var(--c-accent-dim), rgba(123,77,255,0.1));
   border-radius: 50%;
   margin: 0 auto 24px;
   overflow: hidden;
@@ -747,7 +836,7 @@ body::after {
 }
 
 .product-card:hover .product-logo {
-  background: linear-gradient(135deg, var(--c-accent-dim), rgba(108,99,255,0.2));
+  background: linear-gradient(135deg, var(--c-accent-dim), rgba(123,77,255,0.2));
   box-shadow: inset 0 0 20px var(--c-accent-dim);
 }
 
@@ -833,7 +922,7 @@ body::after {
 }
 
 /* ============================================================
-   TEAM
+   BOARD / LEADERSHIP
    ============================================================ */
 .team {
   padding: var(--section-py) 0;
@@ -842,24 +931,107 @@ body::after {
 
 .team-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 48px;
 }
 
 .team-header .section-subtitle {
   margin: 0 auto;
 }
 
+/* Contained board-room panel */
+.board-panel {
+  position: relative;
+  background:
+    radial-gradient(ellipse 70% 120% at 50% 0%, rgba(0,212,255,0.06), transparent 70%),
+    linear-gradient(180deg, rgba(255,255,255,0.03), rgba(10,17,40,0.45));
+  border: 1px solid var(--c-glass-border);
+  border-radius: 28px;
+  padding: 42px 40px 46px;
+  overflow: hidden;
+}
+
+.board-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--c-accent), var(--c-accent2), transparent);
+}
+
+/* Corner brackets — official "charter" feel */
+.board-panel::after {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 18px;
+  pointer-events: none;
+}
+
+/* Board crest / letterhead */
+.board-seal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 32px;
+  margin-bottom: 42px;
+  border-bottom: 1px solid var(--c-glass-border);
+  position: relative;
+  z-index: 1;
+}
+
+.board-seal-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-family: var(--ff-heading);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--c-white);
+  background: linear-gradient(135deg, var(--c-accent), var(--c-accent2));
+  box-shadow: 0 0 24px var(--c-accent-dim);
+}
+
+.board-seal-label {
+  font-family: var(--ff-heading);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--c-text);
+}
+
+.board-seal-year {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--c-accent);
+  padding: 4px 12px;
+  border: 1px solid var(--c-accent-dim);
+  border-radius: 50px;
+}
+
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 28px;
+  gap: 24px;
+  position: relative;
+  z-index: 1;
 }
 
 .team-card {
-  background: var(--c-glass);
+  background: var(--c-surface-lit);
   border: 1px solid var(--c-glass-border);
   border-radius: var(--radius);
-  padding: 36px 24px;
+  padding: 30px 22px;
   text-align: center;
   transition: var(--transition);
   position: relative;
@@ -870,7 +1042,7 @@ body::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 60%, var(--c-accent-dim));
+  background: linear-gradient(180deg, transparent 55%, var(--c-accent-dim));
   opacity: 0;
   transition: var(--transition);
   pointer-events: none;
@@ -883,21 +1055,23 @@ body::after {
 .team-card:hover {
   border-color: var(--c-accent-dim);
   transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(0,191,255,0.1);
+  box-shadow: 0 12px 40px rgba(0,212,255,0.1);
 }
 
 .team-avatar {
-  width: 80px;
-  height: 80px;
+  width: 76px;
+  height: 76px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 34px;
+  font-size: 32px;
   margin: 0 auto 18px;
-  background: linear-gradient(135deg, var(--c-accent-dim), rgba(108,99,255,0.15));
+  background: linear-gradient(135deg, var(--c-accent-dim), rgba(123,77,255,0.15));
   border: 2px solid var(--c-glass-border);
   transition: var(--transition);
+  position: relative;
+  z-index: 1;
 }
 
 .team-card:hover .team-avatar {
@@ -905,31 +1079,82 @@ body::after {
   box-shadow: 0 0 25px var(--c-accent-dim);
 }
 
+.team-meta {
+  position: relative;
+  z-index: 1;
+}
+
 .team-card h3 {
   font-family: var(--ff-heading);
   font-size: 17px;
   font-weight: 700;
   color: var(--c-white);
-  margin-bottom: 4px;
-  position: relative;
-  z-index: 1;
+  margin-bottom: 6px;
 }
 
 .team-role {
-  font-size: 13px;
+  display: block;
+  font-size: 12px;
   font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   color: var(--c-accent);
-  margin-bottom: 10px;
-  position: relative;
-  z-index: 1;
+  margin-bottom: 12px;
 }
 
 .team-card p {
   font-size: 13.5px;
   color: var(--c-text-dim);
   line-height: 1.6;
+}
+
+.team-contact {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--c-glass-border);
+}
+
+.team-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--c-accent);
+  transition: var(--transition);
+}
+
+.team-contact a:hover {
+  color: var(--c-white);
+}
+
+.core-team {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px dashed var(--c-glass-border);
   position: relative;
   z-index: 1;
+}
+
+.core-team-label {
+  display: block;
+  text-align: center;
+  font-family: var(--ff-heading);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-text-dim);
+  margin-bottom: 18px;
+}
+
+.core-team .team-card {
+  max-width: 340px;
+  margin: 0 auto;
 }
 
 /* ============================================================
@@ -1014,6 +1239,19 @@ body::after {
   font-size: 18px;
 }
 
+.contact-subhead {
+  margin-top: 28px;
+  margin-bottom: 16px;
+  font-family: var(--ff-heading);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--c-text-dim);
+  position: relative;
+  z-index: 1;
+}
+
 /* ============================================================
    FOOTER
    ============================================================ */
@@ -1039,7 +1277,7 @@ body::after {
 .footer-brand img {
   width: 32px;
   height: 32px;
-  border-radius: 50%;
+  border-radius: 26%;
 }
 
 .footer-brand span {
@@ -1113,6 +1351,24 @@ body::after {
 .reveal-delay-5 { transition-delay: 0.5s; }
 .reveal-delay-6 { transition-delay: 0.6s; }
 
+/* Content stays visible when scripting is unavailable */
+.no-js .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -1157,7 +1413,7 @@ body::after {
     order: -1;
   }
 
-  .hero-logo-wrapper {
+  .hero-mark-card {
     width: 320px;
     height: 320px;
   }
@@ -1240,12 +1496,12 @@ body::after {
     margin-bottom: 28px;
   }
 
-  .hero-logo-wrapper {
+  .hero-mark-card {
     width: 260px;
     height: 260px;
   }
 
-  .hero-logo-wrapper::before {
+  .hero-mark-card::before {
     inset: -15px;
   }
 
@@ -1303,18 +1559,39 @@ body::after {
     font-size: 14px;
   }
 
-  /* Team */
+  /* Board */
   .team-header {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+  }
+
+  .board-panel {
+    padding: 32px 24px 36px;
+    border-radius: 22px;
+  }
+
+  .board-panel::after {
+    inset: 10px;
+    border-radius: 16px;
+  }
+
+  .board-seal {
+    gap: 12px;
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+  }
+
+  .board-seal-label {
+    font-size: 12px;
+    letter-spacing: 2px;
   }
 
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 20px;
   }
 
   .team-card {
-    padding: 28px 20px;
+    padding: 26px 18px;
   }
 
   /* Contact */
@@ -1408,7 +1685,7 @@ body::after {
     font-size: 14px;
   }
 
-  .hero-logo-wrapper {
+  .hero-mark-card {
     width: 240px;
     height: 240px;
   }
@@ -1466,25 +1743,45 @@ body::after {
     font-size: 13px;
   }
 
-  /* Team */
+  /* Board */
+  .board-panel {
+    padding: 26px 18px 30px;
+    border-radius: 18px;
+  }
+
+  .board-seal-mark {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
   .team-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 16px;
   }
 
   .team-card {
-    padding: 20px 16px;
+    padding: 24px 20px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 18px;
   }
 
   .team-avatar {
-    width: 70px;
-    height: 70px;
-    font-size: 28px;
-    margin-bottom: 14px;
+    width: 66px;
+    height: 66px;
+    font-size: 27px;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .team-meta {
+    flex: 1;
   }
 
   .team-card h3 {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .team-card p {
@@ -1626,12 +1923,12 @@ body::after {
     border-radius: 40px;
   }
 
-  .hero-logo-wrapper {
+  .hero-mark-card {
     width: 220px;
     height: 220px;
   }
 
-  .hero-logo-wrapper::before {
+  .hero-mark-card::before {
     inset: -12px;
     border-width: 1.5px;
   }
@@ -1740,29 +2037,61 @@ body::after {
     font-size: 12px;
   }
 
-  /* Team */
+  /* Board */
   .team-header {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
+  }
+
+  .board-panel {
+    padding: 22px 14px 26px;
+    border-radius: 16px;
+  }
+
+  .board-panel::after {
+    inset: 8px;
+    border-radius: 12px;
+  }
+
+  .board-seal {
+    gap: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 26px;
+  }
+
+  .board-seal-mark {
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .board-seal-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .board-seal-year {
+    font-size: 11px;
+    padding: 3px 10px;
   }
 
   .team-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 14px;
   }
 
   .team-card {
-    padding: 18px 12px;
+    padding: 20px 16px;
+    gap: 14px;
   }
 
   .team-avatar {
-    width: 64px;
-    height: 64px;
-    font-size: 26px;
-    margin-bottom: 12px;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
   }
 
   .team-card h3 {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .team-role {
@@ -1834,34 +2163,16 @@ body::after {
 }
 
 /* ============================================================
-   TEXTMOB ICON — FACEBOOK-STYLE ROUNDED DESIGN
+   HERO FLOATING CHIPS — SMALL SCREENS
    ============================================================ */
-.icon-text {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.6em;
-  height: 1.6em;
-  min-width: 1.6em;
-  min-height: 1.6em;
-  font-size: 0.8em;
-  font-weight: 900;
-  background: var(--c-accent) !important;
-  color: white !important;
-  border-radius: 0.28em;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-  letter-spacing: -0.08em;
-  line-height: 1.2;
-  flex-shrink: 0;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  text-decoration: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
+@media (max-width: 640px) {
+  .hero-chip {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
 
-/* Hover effects for contact and footer icons */
-.contact-link:hover .icon-text,
-.footer-socials a:hover .icon-text {
-  transform: scale(1.15);
-  box-shadow: 0 0 18px var(--c-accent-glow);
+  .hero-chip-1 { left: 0; }
+  .hero-chip-2 { right: -4%; }
+  .hero-chip-3 { left: 0; }
+  .hero-chip-4 { right: 0; }
 }
